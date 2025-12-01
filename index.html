@@ -1,9 +1,9 @@
- <!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="hi">
 <head>
-  <meta charset="utf-8"/>
-  <title>Sanwera Global – Green Infrastructure & Terrace Farming</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanwera Global - Terrace & Urban Farming</title>
   <style>
     :root {
       --bg:#04140b;
@@ -11,375 +11,244 @@
       --accent:#1db954;
       --accent2:#c9a85b;
       --text:#f5f7f4;
-      --muted:#a9b6aa;
+      --muted:#9ab6aa;
       --card:#0c2716;
       --border:#163524;
-      --max:1080px;
       --radius:18px;
+      --max:1080px;
+      --shadow:0 18px 40px rgba(0,0,0,0.6);
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background: radial-gradient(circle at top, #0a3b21 0, #020806 55%);
-      color:var(--text);
-      line-height:1.5;
-    }
-    a{color:var(--accent2);text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:18px 16px 48px;}
-    header{
-      position:sticky;top:0;z-index:20;
-      backdrop-filter: blur(12px);
-      background:linear-gradient(90deg, rgba(4,20,11,0.95), rgba(4,20,11,0.7));
-      border-bottom:1px solid rgba(201,168,91,0.25);
-    }
-    .nav{
-      max-width:var(--max);margin:0 auto;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:10px 16px;
-    }
-    .brand{display:flex;align-items:center;gap:10px}
-    .logo-circle{
-      width:42px;height:42px;border-radius:999px;
-      border:2px solid var(--accent2);
-      display:flex;align-items:center;justify-content:center;
-      font-weight:800;font-size:20px;color:var(--accent2);
-    }
-    .brand-text span{display:block;font-size:12px;color:var(--muted);}
-    .brand-text strong{letter-spacing:0.08em;font-size:13px}
-    .nav-links{display:flex;gap:14px;font-size:13px}
-    .nav-links a{padding:6px 10px;border-radius:999px;border:1px solid transparent}
-    .nav-links a:hover{border-color:rgba(201,168,91,0.5);background:rgba(5,40,20,0.8);}
-    .btn-main{
-      background:var(--accent2);
-      color:#031107;
-      padding:8px 14px;
-      border-radius:999px;
-      font-weight:600;
-      border:none;
-    }
-    main{padding-top:10px;}
-    /* hero */
-    .hero{
-      display:grid;
-      grid-template-columns: minmax(0,1.3fr) minmax(0,1fr);
-      gap:22px;
-      padding:28px 0 18px;
-      align-items:center;
-    }
-    .eyebrow{font-size:12px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:6px;}
-    h1{font-size:32px;line-height:1.15;margin-bottom:10px;}
-    h1 span{color:var(--accent2);}
-    .hero p{color:var(--muted);font-size:14px;margin-bottom:14px;}
-    .hero-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px;}
-    .btn-outline{
-      padding:8px 14px;border-radius:999px;
-      border:1px solid rgba(201,168,91,0.5);background:transparent;color:var(--accent2);font-size:13px;
-    }
-    .hero-meta{display:flex;flex-wrap:wrap;gap:16px;font-size:12px;color:var(--muted);margin-top:4px;}
-    .hero-card{
-      background:radial-gradient(circle at top, #11512d 0, #04140b 60%);
-      border-radius:var(--radius);
-      padding:14px;
-      border:1px solid rgba(201,168,91,0.35);
-      box-shadow:0 18px 45px rgba(0,0,0,0.6);
-      position:relative;
-      overflow:hidden;
-    }
-    .hero-tag{position:absolute;top:10px;right:12px;font-size:11px;
-      background:rgba(0,0,0,0.5);padding:4px 9px;border-radius:999px;border:1px solid rgba(201,168,91,0.6);}
-    .tower-illus{
-      width:100%;height:180px;border-radius:14px;
-      background:linear-gradient(145deg,#1f7a3c,#46b96a);
-      position:relative;
-      overflow:hidden;
-      margin-top:10px;
-    }
-    .tower-illus::before{
-      content:"REGULAR TOWER";
-      position:absolute;top:10px;left:12px;
-      font-size:11px;font-weight:600;letter-spacing:0.12em;color:rgba(255,255,255,0.85);
-    }
-    .tower-illus::after{
-      content:"5–8 PLANTS • 365 DAYS";
-      position:absolute;bottom:10px;right:12px;
-      font-size:11px;font-weight:600;color:#e9fff1;
-      background:rgba(0,0,0,0.35);padding:4px 8px;border-radius:999px;
-    }
-    .tower-body{
-      position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);
-      width:82px;height:150px;border-radius:40px 40px 22px 22px;
-      background:#fafafa;border:3px solid #e9e9e9;
-      box-shadow:0 10px 30px rgba(0,0,0,0.45);
-    }
-    .tower-ring{
-      position:absolute;left:50%;transform:translateX(-50%);
-      width:74px;height:18px;border-radius:999px;
-      background:#ffe27a;border:2px solid #f5c447;
-    }
-    .tower-ring.r2{top:46px;background:#ffb15a;border-color:#f39635;}
-    .tower-ring.r3{top:76px;background:#ff6b6b;border-color:#f14949;}
-    .tower-base{
-      position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);
-      width:64px;height:20px;border-radius:12px;
-      background:#111;
-    }
-    .tower-plant{
-      position:absolute;width:16px;height:26px;border-radius:999px 999px 0 0;
-      background:#2f9e44;bottom:110px;
-      box-shadow:0 0 0 2px rgba(0,0,0,0.15);
-    }
-    .tower-plant.l1{left:6px;}
-    .tower-plant.l2{left:24px;}
-    .tower-plant.r1{right:6px;}
-    .tower-plant.r2{right:24px;}
-    /* sections */
-    section{margin-top:28px;}
-    .section-title{font-size:20px;margin-bottom:6px;}
-    .section-sub{font-size:13px;color:var(--muted);margin-bottom:12px;}
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:14px;
-    }
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      padding:14px;
-      font-size:13px;
-    }
-    .card h3{font-size:15px;margin-bottom:4px;}
-    .pill{
-      display:inline-flex;align-items:center;gap:6px;
-      border-radius:999px;
-      border:1px solid rgba(201,168,91,0.4);
-      padding:4px 9px;
-      font-size:11px;
-      margin-top:6px;
-      color:var(--muted);
-    }
-    .price{font-weight:700;color:var(--accent2);margin-top:6px;font-size:14px;}
-    ul{padding-left:16px;margin-top:6px;color:var(--muted);}
-    li{margin-bottom:3px;}
-    .two-col{
-      display:grid;grid-template-columns:1.2fr 1fr;gap:16px;
-    }
-    .tagline{font-style:italic;color:var(--muted);margin-top:8px;font-size:13px;}
-    .contact-box{
-      background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:14px;font-size:13px;
-    }
-    .contact-row{margin-bottom:6px;}
-    .small-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em;}
-    footer{
-      border-top:1px solid rgba(255,255,255,0.08);
-      margin-top:28px;padding:14px 16px 26px;
-      text-align:center;font-size:11px;color:var(--muted);
-    }
-    @media (max-width:800px){
-      .hero{grid-template-columns:1fr;}
-      .two-col{grid-template-columns:1fr;}
-      .grid-3{grid-template-columns:1fr;}
-      h1{font-size:26px;}
-      .nav-links{display:none;}
-    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;}
+    body{background:radial-gradient(circle at top,#062313,#000);color:var(--text);line-height:1.6;}
+    a{text-decoration:none;color:inherit;}
+    header{position:sticky;top:0;z-index:20;background:linear-gradient(to right,#020806,#04140b);}
+    .nav{max-width:var(--max);margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;}
+    .logo-wrap{display:flex;align-items:center;gap:10px;}
+    .logo-mark{width:38px;height:38px;border-radius:50%;border:1px solid rgba(201,168,91,0.8);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem;color:var(--accent2);}
+    .nav-title{font-weight:600;letter-spacing:0.08em;font-size:0.95rem;text-transform:uppercase;color:var(--accent2);}
+    .nav-links{display:flex;gap:18px;font-size:0.9rem;color:var(--muted);}
+    .nav-links a:hover{color:var(--accent);}
+    .hero{max-width:var(--max);margin:0 auto;padding:32px 16px 40px;display:grid;grid-template-columns:1.3fr 1fr;gap:26px;align-items:center;}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;text-align:center;}}
+    .hero-tag{font-size:0.85rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);}
+    .hero-title{font-size:2.4rem;margin:12px 0;color:var(--text);}
+    .hero-title span{color:var(--accent2);}
+    .hero-sub{color:var(--muted);font-size:0.95rem;max-width:460px;}
+    .hero-cta{margin-top:20px;display:flex;flex-wrap:wrap;gap:12px;}
+    .btn{padding:10px 20px;border-radius:999px;border:none;cursor:pointer;font-size:0.95rem;font-weight:500;}
+    .btn-primary{background:var(--accent);color:#021006;}
+    .btn-primary:hover{background:#18a347;}
+    .btn-outline{background:transparent;border:1px solid rgba(201,168,91,0.7);color:var(--accent2);}
+    .btn-outline:hover{background:rgba(201,168,91,0.1);}
+    .hero-badges{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px;font-size:0.8rem;color:var(--muted);}
+    .badge{padding:4px 10px;border-radius:999px;border:1px solid rgba(60,106,72,0.8);background:rgba(6,40,25,0.9);}
+    .hero-card{background:radial-gradient(circle at top,#0f3b20,#030b07);border-radius:26px;border:1px solid rgba(27,79,52,0.9);padding:18px 18px 20px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+    .hero-card h2{font-size:1.1rem;margin-bottom:6px;color:var(--accent2);}
+    .hero-card h3{font-size:1.5rem;margin-bottom:8px;}
+    .tower-pill{margin:12px 0 10px;font-size:0.9rem;color:var(--muted);}
+    .hero-stats{display:flex;justify-content:space-between;font-size:0.8rem;color:var(--muted);margin-top:12px;}
+    .price-tag{font-size:1.4rem;font-weight:600;color:var(--accent);}
+    .leaf-bg{position:absolute;inset:-40px;opacity:0.12;background:url('https://images.pexels.com/photos/139488/pexels-photo-139488.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover no-repeat;mix-blend-mode:screen;}
+    main{max-width:var(--max);margin:0 auto;padding:0 16px 60px;}
+    section{margin-top:40px;}
+    h2{font-size:1.6rem;margin-bottom:8px;}
+    .section-sub{font-size:0.9rem;color:var(--muted);margin-bottom:18px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+    .card{background:radial-gradient(circle at top,#0d2819,#020806);border-radius:var(--radius);border:1px solid var(--border);padding:16px 16px 18px;}
+    .card h3{font-size:1.1rem;margin-bottom:6px;color:var(--accent2);}
+    .card p{font-size:0.9rem;color:var(--muted);}
+    .card h4{margin-top:8px;font-size:1.1rem;color:var(--accent);}
+    ul{margin-left:18px;font-size:0.9rem;color:var(--muted);}
+    li{margin:4px 0;}
+    .highlight{color:var(--accent2);font-weight:500;}
+    #contact{text-align:center;}
+    #contact h3{margin-top:8px;font-size:1rem;}
+    footer{text-align:center;padding:26px 10px;color:var(--muted);font-size:0.85rem;border-top:1px solid #082017;background:#020806;}
+    .whatsapp-btn{position:fixed;right:16px;bottom:20px;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#25D366;color:#fff;font-size:1.6rem;box-shadow:0 10px 25px rgba(0,0,0,0.5);}
   </style>
 </head>
 <body>
+
 <header>
-  <div class="nav">
-    <div class="brand">
-      <div class="logo-circle">SG</div>
-      <div class="brand-text">
-        <strong>SANWERA GLOBAL</strong>
-        <span>Har Ghar • Har Khet Tak Hariyali</span>
+  <nav class="nav">
+    <div class="logo-wrap">
+      <div class="logo-mark">SG</div>
+      <div>
+        <div class="nav-title">SANWERA GLOBAL</div>
+        <div style="font-size:0.75rem;color:var(--muted);">Terrace • Balcony • Village Farming</div>
       </div>
     </div>
     <div class="nav-links">
       <a href="#services">Services</a>
-      <a href="#products">Towers</a>
-      <a href="#village">Village Mission</a>
-      <a href="#contact" class="btn-main">Contact</a>
+      <a href="#towers">Towers</a>
+      <a href="#packages">Packages</a>
+      <a href="#contact">Contact</a>
     </div>
-  </div>
+  </nav>
 </header>
 
-<main class="wrap">
-  <section class="hero">
-    <div>
-      <div class="eyebrow">India’s First Urban + Village Green Model</div>
-      <h1>Grow <span>365 Days Fresh</span> Organic Vegetables with Sanwera Global</h1>
-      <p>We design and install terrace farms, balcony gardens, vegetable towers and village farming systems so that every family and every farmer in MP can enjoy clean, chemical-free food.</p>
-      <div class="hero-ctas">
-        <button class="btn-main" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">📞 Book Free Call</button>
-        <button class="btn-outline" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">🌱 View Towers & Pricing</button>
+<section class="hero">
+  <div>
+    <div class="hero-tag">Har Ghar • Har Khet • Hariyali</div>
+    <h1 class="hero-title">
+      Grow <span>Fresh Organic Vegetables</span><br/>from your own terrace – 365 days.
+    </h1>
+    <p class="hero-sub">
+      Sanwera Global इंदौर और MP में terrace, balcony और village farming setup करता है —
+      ताकि आपका घर और health, dono chemical-free रहें।
+    </p>
+    <div class="hero-cta">
+      <button class="btn btn-primary" onclick="window.open('https://wa.me/917771805663','_blank')">
+        📞 Book Free Site Visit
+      </button>
+      <button class="btn btn-outline" onclick="location.href='#towers'">
+        🌿 View Vegetable Towers
+      </button>
+    </div>
+    <div class="hero-badges">
+      <span class="badge">600+ Happy Terraces</span>
+      <span class="badge">MP ke har jile me seva</span>
+      <span class="badge">Complete Organic Setup</span>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <div class="leaf-bg"></div>
+    <h2>Regular Vegetable Tower</h2>
+    <h3>छोटे space में बड़ा harvest</h3>
+    <p class="tower-pill">
+      3 ft height • 6 inch dia • <span class="highlight">5–8 plants</span> capacity –  
+      tomato, chilli, bhindi, beans jaise regular sabziyon ke liye perfect.
+    </p>
+    <div class="hero-stats">
+      <div>
+        <div class="price-tag">₹2,999 / tower</div>
+        <div style="font-size:0.8rem;color:var(--muted);">Installation + soil + starter plants*</div>
       </div>
-      <div class="hero-meta">
-        <div>📍 Indore • Service in all districts of MP</div>
-        <div>🥕 Terrace • Balcony • Village Farming</div>
+      <div style="text-align:right;font-size:0.8rem;">
+        <div>Avg. 25–35 kg sabzi / season</div>
+        <div>Balcony & terrace friendly</div>
       </div>
     </div>
-    <div class="hero-card">
-      <div class="hero-tag">Regular Tower • ₹2,999</div>
-      <div style="font-size:13px;color:var(--muted);">5–8 plants • 3 ft height • 6 inch dia<br/>Perfect for tomato, chilli, brinjal & more.</div>
-      <div class="tower-illus">
-        <div class="tower-body"></div>
-        <div class="tower-ring" style="top:24px;"></div>
-        <div class="tower-ring r2"></div>
-        <div class="tower-ring r3"></div>
-        <div class="tower-base"></div>
-        <div class="tower-plant l1"></div>
-        <div class="tower-plant l2"></div>
-        <div class="tower-plant r1"></div>
-        <div class="tower-plant r2"></div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
+
+<main>
 
   <section id="services">
-    <div class="section-title">What We Do</div>
-    <div class="section-sub">From small balconies to village orchards, Sanwera Global builds practical, sustainable green systems across MP.</div>
-    <div class="grid-3">
+    <h2>Our Green Services</h2>
+    <p class="section-sub">
+      Hum sirf saman nahi bechte — hum aapka pura organic setup design, install
+      aur maintain karte hain.
+    </p>
+
+    <div class="grid">
       <div class="card">
-        <h3>Terrace Farming Setup</h3>
-        <p>Create a full organic farm on your terrace with towers, grow bags, soil mix and drip.</p>
-        <ul>
-          <li>Site visit & custom layout</li>
-          <li>Soil, nutrition & organic pest control</li>
-          <li>Guidance & support after installation</li>
-        </ul>
-        <div class="pill">Start from ₹5,999</div>
+        <h3>Terrace Vegetable Farming</h3>
+        <p>पूरी छत को productive green space बनाते हैं – beds, grow bags, shade net, drip
+          irrigation aur seasonal plantation ke saath.</p>
       </div>
       <div class="card">
-        <h3>Balcony Garden Setup</h3>
-        <p>Compact balcony gardens for flats and small spaces – vegetables, herbs and flowers.</p>
-        <ul>
-          <li>Vertical structure + grow bags</li>
-          <li>Indoor / semi-shade options</li>
-        </ul>
-        <div class="pill">Start from ₹3,499</div>
+        <h3>Vegetable Towers Installation</h3>
+        <p>Regular, leafy aur hybrid vegetable towers jo chhote area me bhi 20–40 plants tak
+          ugाने की capacity रखते हैं.</p>
       </div>
       <div class="card">
-        <h3>Village & Orchard Projects</h3>
-        <p>Fruit orchards, school bagichas and community plantations for villages.</p>
-        <ul>
-          <li>Orchard planning & plantation</li>
-          <li>Farmer training & soil revival</li>
-        </ul>
-        <div class="pill">Contact for estimate</div>
+        <h3>Balcony & Indoor Gardening</h3>
+        <p>Chhoti balcony, office ya flat ke liye smart vertical solutions – kam pani,
+          kam space, max greenery.</p>
+      </div>
+      <div class="card">
+        <h3>Village Orchard & Farm Setup</h3>
+        <p>Gaon me multi-layer orchard, fruit trees, organic kitchen garden aur drip
+          irrigation system lagाते हैं.</p>
+      </div>
+      <div class="card">
+        <h3>Drip Irrigation + Soil Mixing</h3>
+        <p>Custom drip layout, premium organic soil mix (cocopeat, compost, perlite) –
+          taaki plants fast grow karein.</p>
+      </div>
+      <div class="card">
+        <h3>Organic Seeds & Nutrition</h3>
+        <p>Desi beej, bio-fertilizers, jeevamrit & pest control solutions – chemical-free farming ke liye.</p>
       </div>
     </div>
   </section>
 
-  <section id="products">
-    <div class="section-title">Vegetable Towers</div>
-    <div class="section-sub">Space-saving vertical systems for 365-day vegetable production at home.</div>
-    <div class="grid-3">
+  <section id="towers">
+    <h2>🌿 Why People Love Our Vegetable Towers?</h2>
+    <p class="section-sub">
+      Sanwera Global sirf tower nahi deta… hum <span class="highlight">पूरा setup</span> karte hain:
+    </p>
+    <ul>
+      <li>✔ Professional tower installation</li>
+      <li>✔ Premium organic soil mix</li>
+      <li>✔ Starter plants (seasonal veggies + leafy greens)</li>
+      <li>✔ Organic fertilizer & nutrition kit</li>
+      <li>✔ Basic maintenance & watering guide</li>
+    </ul>
+    <h3 style="margin-top:12px;">Regular Tower – सिर्फ ₹2,999/-</h3>
+    <p style="font-size:0.9rem;color:var(--muted);margin-top:4px;">
+      Root veggies: radish, carrot | Herbs: mint, pudina, tulsi – sab ke liye alag-alag combo options available.
+    </p>
+  </section>
+
+  <section id="packages">
+    <h2>Our Terrace & Balcony Packages</h2>
+    <p class="section-sub">Har budget ke liye practical packages – fully customizable.</p>
+
+    <div class="grid">
       <div class="card">
-        <h3>Regular Tower</h3>
-        <div class="price">₹2,999 / tower</div>
-        <ul>
-          <li>3 ft height, 6 inch diameter</li>
-          <li>5–8 plants (tomato, chilli, brinjal, beans)</li>
-          <li>Ideal for terrace & balcony</li>
-        </ul>
-        <div class="pill">Best for beginners</div>
+        <h3>Full Terrace Setup</h3>
+        <p>Soil, drip irrigation, shade net, pots, plants – sab kuch hum arrange karte hain.
+          7 din ke andar aapki terrace ban jaati hai ek chhota organic farm.</p>
+        <h4>₹15,000 – ₹45,000*</h4>
+        <p style="font-size:0.85rem;margin-top:4px;">*Size, design & material ke hisaab se price change hoga.</p>
       </div>
+
       <div class="card">
-        <h3>Hybrid Tower</h3>
-        <div class="price">From ₹3,499</div>
-        <ul>
-          <li>Designed for root & mixed vegetables</li>
-          <li>High yield in small area</li>
-        </ul>
-        <div class="pill">Custom packs available</div>
+        <h3>Monthly Maintenance</h3>
+        <p>Har 15 din visit – fertilizing, pest control, pruning, harvesting help – taaki
+          aapka garden healthy & productive rahe.</p>
+        <h4>₹1,999 / महीना</h4>
       </div>
+
       <div class="card">
-        <h3>Leafy Tower</h3>
-        <div class="price">From ₹3,999</div>
-        <ul>
-          <li>12+ leafy plants (palak, methi, lettuce, mint)</li>
-          <li>Perfect for daily salad & greens</li>
-        </ul>
-        <div class="pill">365-day leafy supply</div>
+        <h3>Gardening Starter Kit</h3>
+        <p>10 pots + premium soil mix + mixed seeds + vermicompost – ghar par khud ka mini garden start karein.</p>
+        <h4>₹3,499</h4>
       </div>
     </div>
   </section>
 
-  <section id="village">
-    <div class="section-title">Har Gaon Hariyali – Village Farming Mission</div>
-    <div class="section-sub">Sanwera Global works to improve farmer income and bring sustainable green models to villages.</div>
-    <div class="two-col">
-      <div class="card">
-        <h3>Why We Exist</h3>
-        <p>We exist to increase farmer income, bring fresh chemical-free food to every home, and make MP greener – one terrace, one school and one village at a time.</p>
-        <p class="tagline">“Har ghar mein bagicha, har gaon mein samruddhi, aur poore MP mein hariyali – this is our mission.”</p>
-        <ul>
-          <li>Orchard & bagicha development</li>
-          <li>Village training & demo plots</li>
-          <li>Subsidy guidance & planning support</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Urban + Rural Hybrid Model</h3>
-        <ul>
-          <li>Urban terrace towers create awareness & demand</li>
-          <li>Rural farmers grow high-value crops & fruits</li>
-          <li>Better prices, better health, better environment</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="section-title">About Sanwera Global</div>
-    <div class="two-col">
-      <div>
-        <p>Sanwera Global is not just a company – we are a green mindset movement. We build modern green infrastructure – terrace gardens, balcony systems, corporate parks and village farming models – so that people see nature as a daily habit, not a weekend luxury.</p>
-        <p class="tagline">“Sanwera Global ka kaam sirf hariyali lagana nahi, balki logon ke dil mein nature ke liye jagrukta jagana hai.”</p>
-      </div>
-      <div class="card">
-        <h3>Founder Vision – Deepak Lovewanshi</h3>
-        <p>“Mera sapna hai ki MP ka koi bhi kona bina hariyali ke na rahe – chahe terrace ho, company ka campus ho, ya gaon ka khet. Sanwera Global us sapne ki pehli kiran hai.”</p>
-      </div>
-    </div>
+  <section style="background:#0a2013;padding:32px 16px;margin-top:40px;border-radius:24px;border:1px solid var(--border);text-align:center;">
+    <h2>600+ खुशहाल छतें इंदौर–भोपाल में</h2>
+    <p style="font-size:1.1rem;margin:20px 0;color:var(--text);">
+      “पहले balcony खाली थी, अब हर महीने लगभग 40 kg ताज़ी सब्ज़ी घर से ही निकलती है!”
+      <br>— Mrs. Lodha, Vijay Nagar, Indore
+    </p>
   </section>
 
   <section id="contact">
-    <div class="section-title">Contact & Bookings</div>
-    <div class="section-sub">Book a free call, demo or site visit for your terrace, balcony or village project.</div>
-    <div class="two-col">
-      <div class="contact-box">
-        <div class="contact-row">
-          <div class="small-label">Phone / WhatsApp</div>
-          <div>📞 <a href="tel:+917771805663">+91 77718 05663</a></div>
-        </div>
-        <div class="contact-row">
-          <div class="small-label">Email</div>
-          <div>✉️ <a href="mailto:contact.sanweraglobal@gmail.com">contact.sanweraglobal@gmail.com</a></div>
-        </div>
-        <div class="contact-row">
-          <div class="small-label">Instagram</div>
-          <div>📸 @sanweraglobal_official</div>
-        </div>
-        <div class="contact-row">
-          <div class="small-label">Service Area</div>
-          <div>📍 Indore based • Service available in all districts of Madhya Pradesh</div>
-        </div>
-        <div class="contact-row" style="margin-top:10px;">
-          <button class="btn-main" onclick="window.location.href='https://wa.me/917771805663'">📲 WhatsApp Now</button>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Quick Enquiry (Copy & Send on WhatsApp)</h3>
-        <p style="font-size:13px;color:var(--muted);">“Namaste, main apne [terrace / balcony / gaon] ke liye setup karwana chahta hoon. Kripya call / visit schedule kar dijiye. – [Name], [City]”</p>
-        <p style="font-size:12px;color:var(--muted);margin-top:10px;">Paste this message with your details on WhatsApp and Sanwera Global will guide you.</p>
-      </div>
-    </div>
+    <h2>संपर्क करें</h2>
+    <p class="section-sub">Free site visit ya quotation ke liye बस एक WhatsApp message bhejein.</p>
+    <h3>WhatsApp / Call: 7771805663</h3>
+    <h3>Email: contact.sanweraglobal@gmail.com</h3>
+
+    <button class="btn btn-primary" style="margin-top:14px;"
+            onclick="window.open('https://wa.me/917771805663','_blank')">
+      💬 WhatsApp पर बात करें
+    </button>
   </section>
+
 </main>
 
 <footer>
-  © Sanwera Global – Green Infrastructure & Farming Solutions • Built for MP • Call/WhatsApp: 77718 05663
+  <h3>Sanwera Global © 2025 | Indore, Madhya Pradesh</h3>
+  <p>हर छत हरी हो, हर प्लेट ऑर्गेनिक हो!</p>
 </footer>
+
+<a href="https://wa.me/917771805663" class="whatsapp-btn" target="_blank">💬</a>
+
 </body>
-  </html>
+   </html>
